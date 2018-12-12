@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('Checkout from SCM') {
+      steps {
+        echo 'Checkout in progress'
+         sh 'git checkout -b cicd-pipeline-gradle --no-daemon'
+                }
     stage('Build') {
       steps {
         echo 'Running Build Automation'
@@ -9,4 +14,5 @@ pipeline {
         }
       }
     }
+}
 }
