@@ -6,7 +6,7 @@ pipeline {
         echo 'checkout in progress'
          sh 'git checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'New', url: 'https://github.com/amitpandey1992/cicd-pipeline-gradle']]])'
           sh 'echo $ls -al'
-        
+      }
                 }
     stage('Build') {
       steps {
@@ -17,5 +17,5 @@ pipeline {
       }
     }
 }
-}
+
 
