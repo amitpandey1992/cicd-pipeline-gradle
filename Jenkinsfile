@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        echo 'Checkout in progress'
+        echo 'checkout in progress'
          sh 'git checkout -b cicd-pipeline-gradle --no-daemon'
                 }
     stage('Build') {
