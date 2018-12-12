@@ -4,7 +4,7 @@ agent any
  stage ('checkout') {
    steps {
        echo 'CheckOut automation'
-       sh 'git checkout -b cicd-pipeline-gradle'
+       sh 'git checkout cicd-pipeline-gradle'
        sh 'echo $ls -al'
       }
     } 
