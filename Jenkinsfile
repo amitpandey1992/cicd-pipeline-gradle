@@ -12,7 +12,7 @@ agent any
    steps {
        echo 'Running Build automation'
        sh './gradlew build --no-daemon'
-        archiveArtifacts artifacts:'dist/sampleApp.zip'       
+        archiveArtifacts artifacts:'dist/sampleapp.zip'       
       }
     } 
   }
