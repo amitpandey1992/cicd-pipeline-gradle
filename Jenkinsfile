@@ -4,7 +4,8 @@ pipeline {
     stage('Checkout') {
       steps {
         echo 'checkout in progress'
-         sh 'git checkout -b cicd-pipeline-gradle --no-daemon'
+         sh 'git checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'New', url: 'https://github.com/amitpandey1992/cicd-pipeline-gradle']]])'
+        
                 }
     stage('Build') {
       steps {
