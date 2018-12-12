@@ -1,10 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
+    stage('checkout') {
       steps {
         echo 'checkout in progress'
-         sh 'git checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'New', url: 'https://github.com/amitpandey1992/cicd-pipeline-gradle']]])'
+         sh 'git checkout cicd-pipeline-gradle'
+          sh 'echo $ls -al'
         
                 }
     stage('Build') {
