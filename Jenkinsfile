@@ -1,21 +1,19 @@
 pipeline {
-  agent any
-  stages {
-    stage('checkout') {
-      steps {
-        echo 'checkout in progress'
-         sh 'git checkout amitpandey1992/cicd-pipeline-gradle'
-          sh 'echo $ls -al'
+agent any
+ stages {
+ stage ('checkout') {
+   steps {
+       echo 'CheckOut automation'
+       sh 'git checkout -b cicd-pipeline-gradle'
+       sh 'echo $ls -al'
       }
-                }
-    stage('Build') {
-      steps {
-        echo 'Running Build Automation'
-         sh './gradlew build --no-daemon'
-         archiveArtifacts artifacts: 'dist/sampleapp.zip'
-        }
+    } 
+  stage ('build') {
+   steps {
+       echo 'Running Build automation'
+       sh './gradlew build --no-daemon'
+        archiveArtifacts artifacts:'dist/sampleApp.zip'       
       }
-    }
+    } 
+  }
 }
-
-
