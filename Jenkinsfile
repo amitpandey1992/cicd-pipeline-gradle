@@ -4,7 +4,7 @@ pipeline {
     stage('checkout') {
       steps {
         echo 'checkout in progress'
-         sh 'git checkout cicd-pipeline-gradle'
+         sh 'git checkout amitpandey1992/cicd-pipeline-gradle'
           sh 'echo $ls -al'
       }
                 }
