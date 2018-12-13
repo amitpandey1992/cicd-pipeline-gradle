@@ -1,4 +1,4 @@
-FROM node:corbon
+FROM node:carbon
 WORKDIR /usr/src/ap
 COPY package*.json ./
 RUN npm install
